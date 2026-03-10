@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AddanewTask.MainPage"
+             BackgroundColor="#E5E5E5">
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+
+        <Grid ColumnDefinitions="Auto, *, Auto" VerticalOptions="Center">
+            <Button Grid.Column="0" Text="&lt;" WidthRequest="45" HeightRequest="45" CornerRadius="22"
+                    BackgroundColor="#D1D1D1" TextColor="#333333" FontSize="20"/>
+
+            <Button Grid.Column="2" Text="Done" FontAttributes="Bold" BackgroundColor="#BCBCBC" 
+                    TextColor="#222222" HeightRequest="45" Padding="15,0" CornerRadius="8"
+                    Clicked="OnDoneClicked"/>
+        </Grid>
+
+        <Label Text="Add Task" FontSize="26" FontAttributes="Bold" HorizontalOptions="Center" TextColor="#222222"/>
+
+        <Border Stroke="#CCCCCC" StrokeThickness="1" BackgroundColor="White" StrokeShape="RoundRectangle 8">
+            <Entry x:Name="TaskNameEntry" 
+                   Placeholder="Task Name" 
+                   PlaceholderColor="Gray"
+                   TextColor="Black" 
+                   Margin="10,0" />
+        </Border>
+
+    </VerticalStackLayout>
+</ContentPage>
