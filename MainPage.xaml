@@ -1,0 +1,47 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskApp.MainPage"
+             Title="Settings">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label
+                Text="Settings"
+                FontSize="24"
+                FontAttributes="Bold"/>
+
+            
+            <Label Text="View Layout"/>
+
+            <Picker x:Name="viewPicker">
+                <Picker.Items>
+                    <x:String>Vertical</x:String>
+                    <x:String>Grid</x:String>
+                </Picker.Items>
+            </Picker>
+
+           
+            <Label Text="About Us"/>
+
+            <Button
+                Text="View Developers"
+                Clicked="AboutClicked"/>
+
+            
+            <Label
+                Text="Version 2.2.1"
+                FontAttributes="Italic"/>
+
+            
+            <Label Text="Color Mode"/>
+
+            <HorizontalStackLayout>
+                <Label Text="Light Mode"/>
+                <Switch x:Name="themeSwitch"/>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
