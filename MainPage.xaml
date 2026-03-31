@@ -2,28 +2,69 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AddanewTask.MainPage"
-             BackgroundColor="#E5E5E5">
+             BackgroundColor="#D2C9BF">
 
-    <VerticalStackLayout Padding="20" Spacing="20">
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="24">
 
-        <Grid ColumnDefinitions="Auto, *, Auto" VerticalOptions="Center">
-            <Button Grid.Column="0" Text="&lt;" WidthRequest="45" HeightRequest="45" CornerRadius="22"
-                    BackgroundColor="#D1D1D1" TextColor="#333333" FontSize="20"/>
+            <Grid ColumnDefinitions="Auto, *, Auto" VerticalOptions="Center">
+                <Button Grid.Column="0" Text="❮" FontSize="16" WidthRequest="42" HeightRequest="42" 
+                        CornerRadius="21" BackgroundColor="#30343E" TextColor="White" Padding="0,0,2,0">
+                    <Button.Shadow>
+                        <Shadow Brush="Black" Offset="0,2" Radius="4" Opacity="0.2" />
+                    </Button.Shadow>
+                </Button>
 
-            <Button Grid.Column="2" Text="Done" FontAttributes="Bold" BackgroundColor="#BCBCBC" 
-                    TextColor="#222222" HeightRequest="45" Padding="15,0" CornerRadius="8"
-                    Clicked="OnDoneClicked"/>
-        </Grid>
+                <Label Grid.Column="1" Text="New Task" FontSize="22" FontAttributes="Bold" 
+                       HorizontalOptions="Center" VerticalOptions="Center" TextColor="#30343E"/>
 
-        <Label Text="Add Task" FontSize="26" FontAttributes="Bold" HorizontalOptions="Center" TextColor="#222222"/>
+                <Button Grid.Column="2" Text="Done" FontAttributes="Bold" BackgroundColor="#30343E" 
+                        TextColor="White" HeightRequest="42" Padding="20,0" CornerRadius="21"/>
+            </Grid>
 
-        <Border Stroke="#CCCCCC" StrokeThickness="1" BackgroundColor="White" StrokeShape="RoundRectangle 8">
-            <Entry x:Name="TaskNameEntry" 
-                   Placeholder="Task Name" 
-                   PlaceholderColor="Gray"
-                   TextColor="Black" 
-                   Margin="10,0" />
-        </Border>
+            <Border Stroke="#30343E" StrokeThickness="2" BackgroundColor="White" StrokeShape="RoundRectangle 20">
+                <VerticalStackLayout Padding="20" Spacing="20">
 
-    </VerticalStackLayout>
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="TASK TITLE" FontSize="11" FontAttributes="Bold" TextColor="#30343E" Opacity="0.6"/>
+                        <Entry x:Name="TaskNameEntry" Placeholder="Enter task name..." PlaceholderColor="#A0A0A0" TextColor="#30343E" />
+                    </VerticalStackLayout>
+
+                    <BoxView HeightRequest="1" Color="#30343E" Opacity="0.1" />
+
+                    <Grid ColumnDefinitions="*, Auto" VerticalOptions="Center">
+                        <Label Text="Deadline" FontSize="16" TextColor="#30343E" VerticalOptions="Center"/>
+                        <Border Grid.Column="1" Stroke="#30343E" StrokeThickness="1.5" StrokeShape="RoundRectangle 8">
+                            <Picker x:Name="DeadlineTogglePicker" 
+                                    WidthRequest="80" 
+                                    HorizontalTextAlignment="Center" 
+                                    TextColor="#30343E"
+                                    SelectedIndexChanged="OnDeadlineToggleChanged">
+                                <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                        <x:String>Yes</x:String>
+                                        <x:String>No</x:String>
+                                    </x:Array>
+                                </Picker.ItemsSource>
+                                <Picker.SelectedIndex>1</Picker.SelectedIndex>
+                            </Picker>
+                        </Border>
+                    </Grid>
+
+                    <Border x:Name="DatePickerBorder" IsVisible="False" Stroke="#30343E" StrokeThickness="1.5" StrokeShape="RoundRectangle 8">
+                        <DatePicker Format="D" TextColor="#30343E" Margin="10,0" />
+                    </Border>
+
+                    <BoxView HeightRequest="1" Color="#30343E" Opacity="0.1" />
+
+                    <VerticalStackLayout Spacing="6">
+                        <Label Text="DESCRIPTION" FontSize="11" FontAttributes="Bold" TextColor="#30343E" Opacity="0.6"/>
+                        <Editor Placeholder="Add notes..." PlaceholderColor="#A0A0A0" TextColor="#30343E" HeightRequest="100" />
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
