@@ -1,0 +1,11 @@
+using Microsoft.Maui.Controls;
+
+namespace ToDoApp
+{
+    public partial class MainPage : ContentPage
+    {
+        public MainPage()
+        {
+            InitializeComponent();
+        }
+    }
