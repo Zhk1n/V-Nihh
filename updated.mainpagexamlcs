@@ -1,0 +1,24 @@
+using System;
+using Microsoft.Maui.Controls;
+
+namespace MauiAppYourProject;
+
+public partial class MainPage : FlyoutPage
+{
+    public MainPage()
+    {
+        InitializeComponent();
+    }
+
+    private async void OnAddButtonClicked(object sender, EventArgs e)
+    {
+        // Handle your Top-Right Plus button action here
+        await DisplayAlert("Add Task", "You clicked the add button header item.", "OK");
+    }
+
+    private async void OnSearchFABClicked(object sender, EventArgs e)
+    {
+        // Handle your Floating Action Button (Q/Search) action here
+        await DisplayAlert("Search Action", "Floating Action Button pressed.", "OK");
+    }
+}
