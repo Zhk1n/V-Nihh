@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="V_nihh.Pages.ProfilePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Profile">
+
+	<ScrollView>
+		<VerticalStackLayout Padding="30" Spacing="18">
+			<Label
+                Text="Profile"
+                FontSize="28"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+
+			<Label
+                Text="This page contains basic profile information for the application."
+                FontSize="18"
+                HorizontalTextAlignment="Center" />
+
+			<Frame Padding="20" CornerRadius="12">
+				<VerticalStackLayout Spacing="10">
+					<Label Text="Name: V-Nihh User" FontSize="16" />
+					<Label Text="Course: Mobile Application Development" FontSize="16" />
+					<Label Text="Activity: Flyout Navigation" FontSize="16" />
+				</VerticalStackLayout>
+			</Frame>
+		</VerticalStackLayout>
+	</ScrollView>
+
+</ContentPage>	

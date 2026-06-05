@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="V_nihh.Pages.AboutPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="About">
+
+	<ScrollView>
+		<VerticalStackLayout Padding="30" Spacing="18">
+			<Label
+                Text="About"
+                FontSize="28"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+
+			<Label
+                Text="This application demonstrates Flyout Navigation using .NET MAUI Shell."
+                FontSize="18"
+                HorizontalTextAlignment="Center" />
+
+			<Frame Padding="20" CornerRadius="12">
+				<VerticalStackLayout Spacing="10">
+					<Label Text="Feature: Flyout Navigation" FontSize="16" />
+					<Label Text="Framework: .NET MAUI" FontSize="16" />
+					<Label Text="Pages: Home, Profile, About" FontSize="16" />
+				</VerticalStackLayout>
+			</Frame>
+		</VerticalStackLayout>
+	</ScrollView>
+
+</ContentPage>
